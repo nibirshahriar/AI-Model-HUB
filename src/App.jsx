@@ -43,7 +43,7 @@ const [carts,setCarts]=useState([])
         <Models modelPromise={modelPromise} carts={carts} setCarts={setCarts} />
       )}
 
-      {activeTab === "cart" && <Cart carts={carts}/>}
+      {activeTab === "cart" && <Cart carts={carts} setCarts={setCarts}/>}
       <Footer />
     </>
   );
