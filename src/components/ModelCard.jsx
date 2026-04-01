@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-const ModelCard = ({ model }) => {
+const ModelCard = ({ model, carts, setCarts }) => {
   const [isSubscried, setIsSubcribed] = useState(false);
 
   const handleSubscription = () => {
     setIsSubcribed(true);
+    setCarts([...carts, model]);
   };
 
   return (

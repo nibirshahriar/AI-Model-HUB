@@ -15,6 +15,7 @@ const modelPromise = getModels(); //eta function er bahire dile Suspense use kor
 
 function App() {
   const [activeTab, setActiveTab] = useState("model");
+const [carts,setCarts]=useState([])
   return (
     <>
       <Navbar />
@@ -38,9 +39,11 @@ function App() {
         />
       </div>
 
-      {activeTab === "model" && <Models modelPromise={modelPromise} />}
+      {activeTab === "model" && (
+        <Models modelPromise={modelPromise} carts={carts} setCarts={setCarts} />
+      )}
 
-      {activeTab === "cart" && <Cart />}
+      {activeTab === "cart" && <Cart carts={carts}/>}
       <Footer />
     </>
   );
