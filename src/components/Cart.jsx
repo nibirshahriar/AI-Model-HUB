@@ -1,19 +1,22 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 const Cart = ({ carts, setCarts }) => {
   const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
 
   const handlePayment = () => {
     setCarts([]);
+toast.success('Payment successful!')
   };
 
   const handleDelete = (item) => {
     const filteredArray = carts.filter((c) => c.id !== item.id);
     setCarts(filteredArray);
+toast.error('Item is deleted')
   };
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <h1 className="text-3xl font-bold text-center py-5">Your Carts</h1>
 
       {carts.length === 0 ? (
